@@ -11,5 +11,64 @@ First, download and install **Node.js** from the official website: [Node.js Offi
 After installation, open your **command prompt** (or terminal) and check if Node.js and npm are installed correctly by running:  
 
 ```bash
-node -v
-npm -v
+node -v  
+npm -v  
+```
+<img src="src/nodejs-download-succes.JPG" width="400">
+
+## 2️⃣ Create the project folder 📂
+
+Create a new folder where the bot files will be stored, then navigate into it in your terminal. After that, initialize the Node.js project:  
+
+```bash
+mkdir mineflayer-bot
+cd mineflayer-bot
+npm init -y
+```
+
+<img src="src/package-done.JPG" width="400">
+
+## 3️⃣ Install Mineflayer 🤖
+
+Now that your project is set up, you can install **Mineflayer**, the library that allows us to create Minecraft bots. Run the following command in your project folder:
+
+```bash
+npm install mineflayer
+```
+## 4️⃣ Create your bot.js file 📝
+
+Next, create a file called **bot.js** in your project folder and paste the following code into it:
+
+```javascript
+const mineflayer = require('mineflayer')
+
+const bot = mineflayer.createBot({
+  auth: 'microsoft',
+  host: 'serverip', 
+  port: 25565,
+  username: 'email@gmail.com', 
+  version: '1.20.2'
+})
+
+bot.on('spawn', () => {
+  console.log("Bot joined on the server!")
+})
+```
+
+## 5️⃣ Run your bot 🚀
+
+After filling in your server and account information in **bot.js**, run the script with:
+
+```bash
+node bot.js
+```
+If everything is correct, you should see something like this:
+
+<img src="src/login.JPG" width="1200">
+
+Next, copy the link from the console and log in with your Microsoft account. Once you've done that, you should immediately see:
+
+```bash
+Bot joined on the server!
+```
+
