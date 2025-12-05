@@ -72,3 +72,8 @@ Next, copy the link from the console and log in with your Microsoft account. Onc
 Bot joined on the server!
 ```
 
+If you did everything correctly, you should see something like this:
+
+<img src="src/join-failed.JPG" width="500">
+This means that your bot is now connected to the server. Keep in mind that while the bot is online, you may not be able to log in with your own account at the same time.
+
