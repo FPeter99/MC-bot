@@ -1,17 +1,4 @@
-/* my_complex_reseller.js — updated shopBuyTotemFlow to fix "no totem found in inventory" issue
 
-Problem found:
-- shopBuyTotemFlow used an internal `step` variable that was set to a finished state after the first purchase.
-- Subsequent calls that only did `bot.chat('/shop')` (from buyTotem) did NOT reset that internal `step`, so the windowOpen handler ignored later shop openings and no purchase attempts happened — hence "no totem found in inventory".
-
-Fix:
-- Promote `step` to a module-level `shopStep` so buyTotem can set shopStep = 1 before sending '/shop'.
-- shopBuyTotemFlow only installs the window handler once and uses shopStep for control flow; after a purchase attempt the handler resets shopStep to 0 so future purchases can start fresh.
-- Added some defensive timeouts and extra debug logs.
-
-Other small improvements:
-- Slightly improved detection heuristics and ensured step resets on errors/timeouts.
-*/
 
 const mineflayer = require('mineflayer');
 
@@ -587,4 +574,5 @@ bot.once('spawn', () => {
   mainLoop().catch(err => {
     console.log("mainLoop hiba:", err);
   });
+
 });
