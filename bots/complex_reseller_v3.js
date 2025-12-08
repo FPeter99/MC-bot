@@ -4,7 +4,7 @@ const bot = mineflayer.createBot({
   auth: 'microsoft',
   host: 'donutsmp.net',
   port: 25565,
-  username: '2018.fpeti@gmail.com',
+  username: 'email@gmail.com',
   version: '1.20.2'
 });
 
@@ -1076,4 +1076,5 @@ bot.on('end', () => {
 process.on('SIGINT', () => {
   try { bot.quit(); } catch (e) { /* ignore */ }
   process.exit();
+
 });
