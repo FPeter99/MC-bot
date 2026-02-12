@@ -118,7 +118,7 @@ This is the brain of the bot:
 
 Full installation instructions can be found here:
 
-👉 **[Installation.md](Installation.md)**
+👉 **[Installation.md](Install.md)**
 
 ---
 👉 **[Previous_versions.md](Previous_versions.md)**
